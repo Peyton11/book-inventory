@@ -38,12 +38,12 @@ if operation == 2:
     title = str(input("Enter book title: "))
     author = str(input("Enter book author: "))
     genre = str(input("Enter book genre: "))
-    sbn_10 = str(input("Enter book ISBN-10: "))
+    isbn_10 = str(input("Enter book ISBN-10: "))
     isbn_13 = str(input("Enter book ISBN-13: "))
     page_count = int(input("Enter page count: "))
 
     # Add to inventory list
-    new_book = [title, author, genre, sbn_10, isbn_13, page_count]
+    new_book = [title, author, genre, isbn_10, isbn_13, page_count]
     inventory.append([new_book])
 
     # Write to CSV
