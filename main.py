@@ -3,6 +3,8 @@
 
 import csv
 
+from utils import display_inventory
+
 inventory = []
 
 # Create CSV file if it doesn't exist
@@ -36,10 +38,7 @@ operation = int(input("Enter choice: "))
 
 # View inventory
 if operation == 1:
-    i = 0
-    for row in inventory:
-        print(f"{[i]} ", row)
-        i += 1
+    display_inventory(inventory)
 
 # Append book to inventory
 if operation == 2:
@@ -64,12 +63,9 @@ if operation == 2:
 # Edit a book from inventory
 elif operation == 3:
 
-    # Display inventory
-    i = 0
-    for row in inventory:
-        print(f"{[i]} ", row)
-        i += 1
+    display_inventory(inventory)
 
+    # Edit book attribute
     edit_index = int(input("Edit book: "))
     print("[1] Edit title")
     print("[2] Edit author")
@@ -101,11 +97,7 @@ elif operation == 3:
 # Delete a book from inventory
 elif operation == 4:
 
-    # Display inventory
-    i = 0
-    for row in inventory:
-        print(f"{[i]} ", row)
-        i += 1
+    display_inventory(inventory)
 
     # Choose book to delete
     delete_index = int(input("Delete book: "))
