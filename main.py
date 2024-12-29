@@ -1,25 +1,16 @@
 # main.py
 # Main file for Book Inventory program
 
+from utils import *
 import csv
-
-from utils import display_inventory
 
 inventory = []
 
 # Create CSV file if it doesn't exist
 open("inventory.csv", "a")
 
-# Check if CSV file is empty
-with open("inventory.csv", "r") as file:
-    first_character = file.read(1)
-    if not first_character:
-        empty = True
-    else:
-        empty = False
-
 # Add heading if file is empty
-if empty:
+if is_empty("inventory.csv"):
     with open("inventory.csv", "w") as file:
         file.write("Title,Author,Genre,ISBN-10,ISBN-13,Page Count")
 
